@@ -1,5 +1,5 @@
-# MideScan v1.0 — by Cybermide
-# Module: A01 — Broken Access Control
+# MideScan v1.0 by Cybermide
+# Module: A01 Broken Access Control
 
 import requests
 
@@ -50,7 +50,7 @@ def scan(target, session, found_pages=[], verbose=True):
                     pass
                 break
 
-    # Check for IDOR — Insecure Direct Object Reference
+    # Check for IDOR Insecure Direct Object Reference
     idor_paths = [
         '/user/1', '/user/2', '/account/1', '/account/2',
         '/profile/1', '/profile/2', '/api/user/1', '/api/user/2',
