@@ -309,21 +309,29 @@ def run_scan(target, depth, sub_method, session):
     platform = crawler.detect_platform(target, session)
     print(colorize(f"  [+] Platform detected: {platform}", Color.GREEN))
 
+    # Get baseline response to detect catch-all routes
+    print(colorize("  [*] Getting baseline response for false positive detection...", Color.BLUE))
+    baselines = crawler.get_baseline_response(target, session)
+    if baselines and baselines[0]['status'] == 200:
+        print(colorize(f"  [!] WARNING: Site returns HTTP 200 for non-existent pages - false positive filtering enabled", Color.YELLOW))
+    else:
+        print(colorize("  [+] Baseline check complete - site returns proper error codes", Color.GREEN))
+
     # Crawl pages
     print_section_header("Crawling & Discovery", "RECON")
     found_pages  = crawler.crawl_pages(target, session)
-    admin_pages  = crawler.enumerate_admin_pages(target, session)
+    admin_pages  = crawler.enumerate_admin_pages(target, session, baselines)
     subdomains   = crawler.enumerate_subdomains(target, method=sub_method)
     admin_urls   = [p['url'] for p in admin_pages if p['status'] == 200]
     all_pages    = found_pages + admin_urls
 
     # Run all OWASP checks
-    modules = [
-        ("Broken Access Control",                    "A01", lambda: a01_access.scan(target, session, all_pages)),
+        modules = [
+        ("Broken Access Control",                    "A01", lambda: a01_access.scan(target, session, all_pages, baselines)),
         ("Cryptographic Failures",                   "A02", lambda: a02_crypto.scan(target, session)),
         ("Injection",                                "A03", lambda: a03_injection.scan(target, session, all_pages)),
         ("Insecure Design",                          "A04", lambda: a04_design.scan(target, session, all_pages)),
-        ("Security Misconfiguration",                "A05", lambda: a05_misconfig.scan(target, session)),
+        ("Security Misconfiguration",                "A05", lambda: a05_misconfig.scan(target, session, baselines)),
         ("Vulnerable and Outdated Components",       "A06", lambda: a06_components.scan(target, session)),
         ("Identification and Authentication Failures","A07", lambda: a07_auth.scan(target, session)),
         ("Software and Data Integrity Failures",     "A08", lambda: a08_integrity.scan(target, session)),
