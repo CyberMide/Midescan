@@ -326,7 +326,7 @@ def run_scan(target, depth, sub_method, session):
     all_pages    = found_pages + admin_urls
 
     # Run all OWASP checks
-        modules = [
+    modules = [
         ("Broken Access Control",                    "A01", lambda: a01_access.scan(target, session, all_pages, baselines)),
         ("Cryptographic Failures",                   "A02", lambda: a02_crypto.scan(target, session)),
         ("Injection",                                "A03", lambda: a03_injection.scan(target, session, all_pages)),

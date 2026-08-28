@@ -1,16 +1,16 @@
-# MideScan v1.0 by Cybermide
-# Module: A01 Broken Access Control
+# MideScan v1.0 - by Cybermide
+# Module: A01 - Broken Access Control
 
 import requests
+from modules.crawler import is_false_positive
 
-def scan(target, session, found_pages=[], verbose=True):
+def scan(target, session, found_pages=[], baselines=[], verbose=True):
     results = []
     base = target.rstrip('/')
 
     if verbose:
-        print("\n  [*] A01 — Checking Broken Access Control...")
+        print("\n  [*] A01 - Checking Broken Access Control...")
 
-    # Check discovered pages for access control issues
     sensitive_keywords = [
         'dashboard', 'admin', 'panel', 'control',
         'manage', 'config', 'setting', 'user', 'account',
@@ -23,26 +23,39 @@ def scan(target, session, found_pages=[], verbose=True):
                 try:
                     resp = session.get(page, timeout=5, verify=False, allow_redirects=False)
                     if resp.status_code == 200:
+                        if is_false_positive(resp, baselines):
+                            break
                         results.append({
-                            'owasp': 'A01 — Broken Access Control',
+                            'owasp': 'A01 - Broken Access Control',
                             'severity': 'HIGH',
                             'status': 'VULNERABLE',
                             'title': 'Sensitive page accessible without authentication',
-                            'evidence': f"GET {page} returned HTTP 200 OK without login",
-                            'details': f"Page '{page}' containing keyword '{keyword}' is publicly accessible",
+                            'evidence': (
+                                f"GET {page}\n"
+                                f"  HTTP Status: 200 OK\n"
+                                f"  Keyword matched: '{keyword}'\n"
+                                f"  Content size: {len(resp.content)} bytes\n"
+                                f"  Result: Page returned 200 OK without any authentication"
+                            ),
+                            'details': f"Page '{page}' containing keyword '{keyword}' is publicly accessible without authentication",
                             'recommendation': 'Implement authentication and authorisation checks on all sensitive pages'
                         })
                         if verbose:
                             print(f"  [!] VULNERABLE: {page} accessible without auth (HTTP 200)")
                     elif resp.status_code == 403:
                         results.append({
-                            'owasp': 'A01 — Broken Access Control',
+                            'owasp': 'A01 - Broken Access Control',
                             'severity': 'MEDIUM',
                             'status': 'POTENTIAL',
                             'title': 'Sensitive page exists but access forbidden',
-                            'evidence': f"GET {page} returned HTTP 403 Forbidden",
-                            'details': f"Page exists at '{page}' — forbidden but may be bypassable",
-                            'recommendation': 'Verify 403 cannot be bypassed with header manipulation'
+                            'evidence': (
+                                f"GET {page}\n"
+                                f"  HTTP Status: 403 Forbidden\n"
+                                f"  Keyword matched: '{keyword}'\n"
+                                f"  Result: Page exists but returns 403 - may be bypassable"
+                            ),
+                            'details': f"Page exists at '{page}' - forbidden but may be bypassable with header manipulation",
+                            'recommendation': 'Verify 403 cannot be bypassed with header manipulation or method tampering'
                         })
                         if verbose:
                             print(f"  [~] POTENTIAL: {page} exists but returns 403")
@@ -50,7 +63,7 @@ def scan(target, session, found_pages=[], verbose=True):
                     pass
                 break
 
-    # Check for IDOR Insecure Direct Object Reference
+    # IDOR checks
     idor_paths = [
         '/user/1', '/user/2', '/account/1', '/account/2',
         '/profile/1', '/profile/2', '/api/user/1', '/api/user/2',
@@ -65,21 +78,28 @@ def scan(target, session, found_pages=[], verbose=True):
         try:
             resp = session.get(url, timeout=5, verify=False, allow_redirects=False)
             if resp.status_code == 200 and len(resp.content) > 100:
+                if is_false_positive(resp, baselines):
+                    continue
                 results.append({
-                    'owasp': 'A01 — Broken Access Control',
+                    'owasp': 'A01 - Broken Access Control',
                     'severity': 'HIGH',
                     'status': 'VULNERABLE',
-                    'title': 'Potential IDOR — Insecure Direct Object Reference',
-                    'evidence': f"GET {url} returned HTTP 200 with {len(resp.content)} bytes of data",
-                    'details': f"Resource at '{path}' is accessible without authentication — changing ID may expose other users data",
-                    'recommendation': 'Implement object-level authorisation checks — verify the requesting user owns the resource'
+                    'title': 'Potential IDOR - Insecure Direct Object Reference',
+                    'evidence': (
+                        f"GET {url}\n"
+                        f"  HTTP Status: 200 OK\n"
+                        f"  Content size: {len(resp.content)} bytes\n"
+                        f"  Result: Sequential ID resource returned data without authentication"
+                    ),
+                    'details': f"Resource at '{path}' accessible without authentication - changing ID may expose other users data",
+                    'recommendation': 'Implement object-level authorisation checks - verify the requesting user owns the resource'
                 })
                 if verbose:
                     print(f"  [!] POTENTIAL IDOR: {url} returned 200 with data")
         except:
             pass
 
-    # Check for HTTP method tampering
+    # HTTP method tampering
     if verbose:
         print("  [*] Checking HTTP method tampering...")
 
@@ -89,13 +109,17 @@ def scan(target, session, found_pages=[], verbose=True):
         dangerous = [m for m in ['PUT', 'DELETE', 'TRACE', 'CONNECT'] if m in allowed]
         if dangerous:
             results.append({
-                'owasp': 'A01 — Broken Access Control',
+                'owasp': 'A01 - Broken Access Control',
                 'severity': 'MEDIUM',
                 'status': 'VULNERABLE',
                 'title': 'Dangerous HTTP methods allowed',
-                'evidence': f"OPTIONS request returned Allow: {allowed}",
+                'evidence': (
+                    f"OPTIONS {target}\n"
+                    f"  Allow header: {allowed}\n"
+                    f"  Dangerous methods found: {', '.join(dangerous)}"
+                ),
                 'details': f"Dangerous HTTP methods enabled: {', '.join(dangerous)}",
-                'recommendation': 'Disable unused HTTP methods — only allow GET and POST where appropriate'
+                'recommendation': 'Disable unused HTTP methods - only allow GET and POST where appropriate'
             })
             if verbose:
                 print(f"  [!] Dangerous HTTP methods allowed: {', '.join(dangerous)}")
@@ -104,13 +128,13 @@ def scan(target, session, found_pages=[], verbose=True):
 
     if not results:
         results.append({
-            'owasp': 'A01 — Broken Access Control',
+            'owasp': 'A01 - Broken Access Control',
             'severity': 'INFO',
             'status': 'SAFE',
             'title': 'No obvious broken access control issues found',
-            'evidence': 'All checked pages returned appropriate responses',
+            'evidence': 'All checked pages returned appropriate responses or matched baseline filter',
             'details': 'Basic access control checks passed',
-            'recommendation': 'Continue manual testing — automated scanners cannot catch all access control flaws'
+            'recommendation': 'Continue manual testing - automated scanners cannot catch all access control flaws'
         })
         if verbose:
             print("  [+] No obvious access control issues found")
