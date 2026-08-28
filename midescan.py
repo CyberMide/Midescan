@@ -330,7 +330,7 @@ def run_scan(target, depth, sub_method, session):
         ("Broken Access Control",                    "A01", lambda: a01_access.scan(target, session, all_pages, baselines)),
         ("Cryptographic Failures",                   "A02", lambda: a02_crypto.scan(target, session)),
         ("Injection",                                "A03", lambda: a03_injection.scan(target, session, all_pages)),
-        ("Insecure Design",                          "A04", lambda: a04_design.scan(target, session, all_pages)),
+        ("Insecure Design",                          "A04", lambda: a04_design.scan(target, session, all_pages, baselines)),
         ("Security Misconfiguration",                "A05", lambda: a05_misconfig.scan(target, session, baselines)),
         ("Vulnerable and Outdated Components",       "A06", lambda: a06_components.scan(target, session)),
         ("Identification and Authentication Failures","A07", lambda: a07_auth.scan(target, session)),

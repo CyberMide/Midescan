@@ -1,0 +1,209 @@
+=================================================================
+  MIDESCAN v1.0 - SCAN REPORT
+  Created by Cybermide
+=================================================================
+
+Target:    https://gateway.cchub.africa/
+Platform:  Unknown
+Date:      2026-08-26 21:22:33
+Duration:  305.05 seconds
+Total findings: 16
+
+SUMMARY
+CRITICAL: 0  HIGH: 4  MEDIUM: 3  LOW: 4  INFO: 5
+
+=================================================================
+DETAILED FINDINGS
+=================================================================
+
+[HIGH]
+
+Title:          No rate limiting detected on login page
+OWASP:          A04 — Insecure Design
+Status:         VULNERABLE
+Evidence:
+  Login URL: https://gateway.cchub.africa/login
+    Method: POST with 10 rapid requests
+    Result: No blocking, rate limiting or lockout detected after 10 failed attempts
+    HTTP status remained: 405
+Details:        Login page does not implement rate limiting — attacker can perform brute force or credential stuffing attacks without restriction
+Recommendation: Implement rate limiting (max 5 attempts), account lockout, CAPTCHA and exponential backoff on login endpoints
+----------------------------------------
+
+Title:          Predictable resource IDs detected — potential IDOR
+OWASP:          A04 — Insecure Design
+Status:         VULNERABLE
+Evidence:
+  Multiple sequential IDs returned data:
+    GET https://gateway.cchub.africa/user/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/user/2 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/user/3 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/account/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/account/2 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/profile/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/profile/2 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/order/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/order/2 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/invoice/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/invoice/2 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/document/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/document/2 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/api/v1/user/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/api/v1/user/2 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/api/users/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/api/users/2 → 200 OK (1428 bytes)
+Details:        Sequential numeric IDs in URLs suggest IDOR vulnerability — attacker can enumerate IDs to access other users data
+Recommendation: Use UUIDs instead of sequential IDs — implement object-level authorisation checks on every request
+----------------------------------------
+
+Title:          Missing security header: Content-Security-Policy
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/
+    Expected header: Content-Security-Policy
+    Result: Header not present in server response
+Details:        CSP header missing - attacker can inject and execute malicious scripts (XSS)
+Recommendation: Add Content-Security-Policy header to restrict sources of scripts, styles and other resources
+----------------------------------------
+
+Title:          Missing security header: Strict-Transport-Security
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/
+    Expected header: Strict-Transport-Security
+    Result: Header not present in server response
+Details:        HSTS missing - browser may allow HTTP connections leaving users vulnerable to downgrade attacks
+Recommendation: Add Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+----------------------------------------
+
+[MEDIUM]
+
+Title:          Missing security header: X-Frame-Options
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/
+    Expected header: X-Frame-Options
+    Result: Header not present in server response
+Details:        X-Frame-Options missing - site vulnerable to Clickjacking attacks
+Recommendation: Add X-Frame-Options: DENY or SAMEORIGIN to prevent the page being embedded in iframes
+----------------------------------------
+
+Title:          Missing security header: X-Content-Type-Options
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/
+    Expected header: X-Content-Type-Options
+    Result: Header not present in server response
+Details:        X-Content-Type-Options missing - browser may interpret files as different MIME types
+Recommendation: Add X-Content-Type-Options: nosniff to prevent MIME type sniffing
+----------------------------------------
+
+Title:          External script missing Subresource Integrity (SRI)
+OWASP:          A08 - Software and Data Integrity Failures
+Status:         VULNERABLE
+Evidence:
+  Script tag: <script src="https://www.googletagmanager.com/gtag/js?id=AW-17884003537">
+    External source: https://www.googletagmanager.com/gtag/js?id=AW-17884003537
+    integrity attribute: NOT PRESENT
+    crossorigin attribute: NOT PRESENT
+    Found on page: https://gateway.cchub.africa/
+Details:        External script 'https://www.googletagmanager.com/gtag/js?id=AW-17884003537' loaded without SRI hash - if the CDN is compromised attacker can serve malicious JavaScript to all visitors
+Recommendation: Add integrity and crossorigin attributes to the script tag - generate SRI hash at https://www.srihash.org
+----------------------------------------
+
+[LOW]
+
+Title:          Missing security header: Referrer-Policy
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/
+    Expected header: Referrer-Policy
+    Result: Header not present in server response
+Details:        Referrer-Policy missing - full URL may be sent to third parties in the Referer header
+Recommendation: Add Referrer-Policy: strict-origin-when-cross-origin
+----------------------------------------
+
+Title:          Missing security header: Permissions-Policy
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/
+    Expected header: Permissions-Policy
+    Result: Header not present in server response
+Details:        Permissions-Policy missing - browser features like camera and microphone not restricted
+Recommendation: Add Permissions-Policy header to restrict access to sensitive browser features
+----------------------------------------
+
+Title:          Server version disclosed in Server header
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  Response header: Server: nginx/1.31.4
+    Found on: https://gateway.cchub.africa/
+Details:        Server reveals version via 'Server: nginx/1.31.4' - helps attackers identify vulnerable software
+Recommendation: Remove or obscure the 'Server' header in server configuration
+----------------------------------------
+
+Title:          Security reporting headers not configured
+OWASP:          A09 - Security Logging and Monitoring Failures
+Status:         POTENTIAL
+Evidence:
+  GET https://gateway.cchub.africa/
+    Missing reporting headers: Report-To, NEL, Content-Security-Policy-Report-Only
+    These headers enable browser-level security monitoring
+Details:        Security reporting headers not configured - browser-level violations and network errors will not be reported to monitoring systems
+Recommendation: Implement Report-To and NEL headers to collect browser security violation reports - set up a reporting endpoint
+----------------------------------------
+
+[INFO]
+
+Title:          No obvious broken access control issues found
+OWASP:          A01 - Broken Access Control
+Status:         SAFE
+Evidence:
+  All checked pages returned appropriate responses or matched baseline filter
+Details:        Basic access control checks passed
+Recommendation: Continue manual testing - automated scanners cannot catch all access control flaws
+----------------------------------------
+
+Title:          No cryptographic failures detected
+OWASP:          A02 — Cryptographic Failures
+Status:         SAFE
+Evidence:
+  HTTPS enabled, certificate valid, cookies properly configured
+Details:        Basic cryptographic checks passed
+Recommendation: Continue monitoring SSL certificate expiry and cookie configurations
+----------------------------------------
+
+Title:          No injection vulnerabilities detected
+OWASP:          A03 — Injection
+Status:         SAFE
+Evidence:
+  SQL, XSS and command injection payloads did not trigger vulnerable responses
+Details:        Basic injection checks passed — manual testing recommended for complete coverage
+Recommendation: Implement parameterised queries, output encoding and input validation as defence in depth
+----------------------------------------
+
+Title:          No authentication failures detected
+OWASP:          A07 - Identification and Authentication Failures
+Status:         SAFE
+Evidence:
+  Default credentials rejected, session tokens appear strong
+Details:        Basic authentication checks passed
+Recommendation: Implement MFA, enforce strong password policy and monitor for suspicious login patterns
+----------------------------------------
+
+Title:          No SSRF vulnerabilities detected
+OWASP:          A10 - Server Side Request Forgery (SSRF)
+Status:         SAFE
+Evidence:
+  SSRF payloads injected into URL parameters and form fields returned no internal content
+Details:        Basic SSRF checks passed - manual testing recommended for complete coverage
+Recommendation: Implement URL allowlisting - block requests to private IP ranges - monitor outbound server connections
+----------------------------------------
+

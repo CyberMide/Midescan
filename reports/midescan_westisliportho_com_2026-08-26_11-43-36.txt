@@ -1,0 +1,728 @@
+=================================================================
+  MIDESCAN v1.0 - SCAN REPORT
+  Created by Cybermide
+=================================================================
+
+Target:    https://westisliportho.com/
+Platform:  Unknown
+Date:      2026-08-26 11:43:36
+Duration:  555.29 seconds
+Total findings: 63
+
+SUMMARY
+CRITICAL: 20  HIGH: 27  MEDIUM: 9  LOW: 4  INFO: 3
+
+=================================================================
+DETAILED FINDINGS
+=================================================================
+
+[CRITICAL]
+
+Title:          SQL Injection detected in form field
+OWASP:          A03 — Injection
+Status:         VULNERABLE
+Evidence:
+  Form action: https://westisliportho.com/contact/
+    Method: GET
+    Payload: ' OR '1'='1'--
+    Fields tested: ['first', 'last', 'email', 'phone', 'textarea']
+    Error detected: 'error' found in server response
+Details:        SQL injection payload in form triggered a database error — attacker can extract full database contents
+Recommendation: Use parameterised queries — validate and sanitise all form inputs server-side
+----------------------------------------
+
+Title:          SQL Injection detected in form field
+OWASP:          A03 — Injection
+Status:         VULNERABLE
+Evidence:
+  Form action: https://westisliportho.com/contact/
+    Method: GET
+    Payload: 1' ORDER BY 1--
+    Fields tested: ['first', 'last', 'email', 'phone', 'textarea']
+    Error detected: 'error' found in server response
+Details:        SQL injection payload in form triggered a database error — attacker can extract full database contents
+Recommendation: Use parameterised queries — validate and sanitise all form inputs server-side
+----------------------------------------
+
+Title:          SQL Injection detected in form field
+OWASP:          A03 — Injection
+Status:         VULNERABLE
+Evidence:
+  Form action: https://westisliportho.com/contact/
+    Method: GET
+    Payload: ' UNION SELECT NULL--
+    Fields tested: ['first', 'last', 'email', 'phone', 'textarea']
+    Error detected: 'error' found in server response
+Details:        SQL injection payload in form triggered a database error — attacker can extract full database contents
+Recommendation: Use parameterised queries — validate and sanitise all form inputs server-side
+----------------------------------------
+
+Title:          SQL Injection detected in form field
+OWASP:          A03 — Injection
+Status:         VULNERABLE
+Evidence:
+  Form action: https://westisliportho.com/contact/
+    Method: GET
+    Payload: '; DROP TABLE users--
+    Fields tested: ['first', 'last', 'email', 'phone', 'textarea']
+    Error detected: 'error' found in server response
+Details:        SQL injection payload in form triggered a database error — attacker can extract full database contents
+Recommendation: Use parameterised queries — validate and sanitise all form inputs server-side
+----------------------------------------
+
+Title:          Sensitive file exposed: /.env.local
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/.env.local
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/.env.local' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/.env.local' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /.env.production
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/.env.production
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/.env.production' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/.env.production' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /.env.backup
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/.env.backup
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/.env.backup' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/.env.backup' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /.gitignore
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/.gitignore
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/.gitignore' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/.gitignore' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /config.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/config.php
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/config.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/config.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /config.xml
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/config.xml
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/config.xml' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/config.xml' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /configuration.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/configuration.php
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/configuration.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/configuration.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /wp-config.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/wp-config.php
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/wp-config.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/wp-config.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /wp-config.php.bak
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/wp-config.php.bak
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/wp-config.php.bak' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/wp-config.php.bak' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /database.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/database.php
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/database.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/database.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /settings.py
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/settings.py
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/settings.py' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/settings.py' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /settings.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/settings.php
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/settings.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/settings.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /local_settings.py
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/local_settings.py
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/local_settings.py' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/local_settings.py' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /web.config
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/web.config
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/web.config' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/web.config' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /backup.zip
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/backup.zip
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/backup.zip' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/backup.zip' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /backup.tar.gz
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/backup.tar.gz
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/backup.tar.gz' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/backup.tar.gz' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+[HIGH]
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/admin/index.php returned HTTP 200 OK without login
+Details:        Page 'https://westisliportho.com/admin/index.php' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/admin/index.html returned HTTP 200 OK without login
+Details:        Page 'https://westisliportho.com/admin/index.html' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/wp-config.php returned HTTP 200 OK without login
+Details:        Page 'https://westisliportho.com/wp-config.php' containing keyword 'config' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/administrator/index.php returned HTTP 200 OK without login
+Details:        Page 'https://westisliportho.com/administrator/index.php' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/config.php returned HTTP 200 OK without login
+Details:        Page 'https://westisliportho.com/config.php' containing keyword 'config' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/configuration.php returned HTTP 200 OK without login
+Details:        Page 'https://westisliportho.com/configuration.php' containing keyword 'config' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/settings.php returned HTTP 200 OK without login
+Details:        Page 'https://westisliportho.com/settings.php' containing keyword 'setting' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/backup.zip returned HTTP 200 OK without login
+Details:        Page 'https://westisliportho.com/backup.zip' containing keyword 'backup' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/web.config returned HTTP 200 OK without login
+Details:        Page 'https://westisliportho.com/web.config' containing keyword 'config' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          No rate limiting detected on login page
+OWASP:          A04 — Insecure Design
+Status:         VULNERABLE
+Evidence:
+  Login URL: https://westisliportho.com/login
+    Method: POST with 10 rapid requests
+    Result: No blocking, rate limiting or lockout detected after 10 failed attempts
+    HTTP status remained: 200
+Details:        Login page does not implement rate limiting — attacker can perform brute force or credential stuffing attacks without restriction
+Recommendation: Implement rate limiting (max 5 attempts), account lockout, CAPTCHA and exponential backoff on login endpoints
+----------------------------------------
+
+Title:          Missing security header: Content-Security-Policy
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/
+    Expected header: Content-Security-Policy
+    Result: Header not present in server response
+Details:        CSP header missing - attacker can inject and execute malicious scripts (XSS)
+Recommendation: Add Content-Security-Policy header to restrict sources of scripts, styles and other resources
+----------------------------------------
+
+Title:          Sensitive file exposed: /db.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/db.php
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/db.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/db.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /phpinfo.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/phpinfo.php
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/phpinfo.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/phpinfo.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /info.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/info.php
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/info.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/info.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /test.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/test.php
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/test.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/test.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /composer.lock
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/composer.lock
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/composer.lock' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/composer.lock' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /Dockerfile
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/Dockerfile
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/Dockerfile' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/Dockerfile' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /.htaccess
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/.htaccess
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/.htaccess' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/.htaccess' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /.htpasswd
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/.htpasswd
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/.htpasswd' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/.htpasswd' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /robots.txt
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/robots.txt
+    HTTP Status: 200 OK
+    Content size: 22 bytes
+    Content preview: User-agent: * Allow: /...
+Details:        Sensitive file '/robots.txt' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/robots.txt' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /sitemap.xml
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/sitemap.xml
+    HTTP Status: 200 OK
+    Content size: 7651 bytes
+    Content preview: <?xml version="1.0" encoding="UTF-8"?> <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">...
+Details:        Sensitive file '/sitemap.xml' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/sitemap.xml' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /crossdomain.xml
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/crossdomain.xml
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/crossdomain.xml' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/crossdomain.xml' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /clientaccesspolicy.xml
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/clientaccesspolicy.xml
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/clientaccesspolicy.xml' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/clientaccesspolicy.xml' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /server-status
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/server-status
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/server-status' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/server-status' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /server-info
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/server-info
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/server-info' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/server-info' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /elmah.axd
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/elmah.axd
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/elmah.axd' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/elmah.axd' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /trace.axd
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/trace.axd
+    HTTP Status: 200 OK
+    Content size: 259565 bytes
+    Content preview: <!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">   <meta name="viewport" content...
+Details:        Sensitive file '/trace.axd' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/trace.axd' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+[MEDIUM]
+
+Title:          Password reset page found — manual review recommended
+OWASP:          A04 — Insecure Design
+Status:         POTENTIAL
+Evidence:
+  Password reset page found at https://westisliportho.com/forgot-password
+Details:        Password reset mechanism requires manual testing to verify token expiry, single-use enforcement and enumeration protection
+Recommendation: Ensure reset tokens are random, expire quickly, are single-use and do not reveal if email exists
+----------------------------------------
+
+Title:          Password reset page found — manual review recommended
+OWASP:          A04 — Insecure Design
+Status:         POTENTIAL
+Evidence:
+  Password reset page found at https://westisliportho.com/reset-password
+Details:        Password reset mechanism requires manual testing to verify token expiry, single-use enforcement and enumeration protection
+Recommendation: Ensure reset tokens are random, expire quickly, are single-use and do not reveal if email exists
+----------------------------------------
+
+Title:          Password reset page found — manual review recommended
+OWASP:          A04 — Insecure Design
+Status:         POTENTIAL
+Evidence:
+  Password reset page found at https://westisliportho.com/password-reset
+Details:        Password reset mechanism requires manual testing to verify token expiry, single-use enforcement and enumeration protection
+Recommendation: Ensure reset tokens are random, expire quickly, are single-use and do not reveal if email exists
+----------------------------------------
+
+Title:          Password reset page found — manual review recommended
+OWASP:          A04 — Insecure Design
+Status:         POTENTIAL
+Evidence:
+  Password reset page found at https://westisliportho.com/account/forgot
+Details:        Password reset mechanism requires manual testing to verify token expiry, single-use enforcement and enumeration protection
+Recommendation: Ensure reset tokens are random, expire quickly, are single-use and do not reveal if email exists
+----------------------------------------
+
+Title:          Password reset page found — manual review recommended
+OWASP:          A04 — Insecure Design
+Status:         POTENTIAL
+Evidence:
+  Password reset page found at https://westisliportho.com/user/forgot
+Details:        Password reset mechanism requires manual testing to verify token expiry, single-use enforcement and enumeration protection
+Recommendation: Ensure reset tokens are random, expire quickly, are single-use and do not reveal if email exists
+----------------------------------------
+
+Title:          Password reset page found — manual review recommended
+OWASP:          A04 — Insecure Design
+Status:         POTENTIAL
+Evidence:
+  Password reset page found at https://westisliportho.com/auth/reset
+Details:        Password reset mechanism requires manual testing to verify token expiry, single-use enforcement and enumeration protection
+Recommendation: Ensure reset tokens are random, expire quickly, are single-use and do not reveal if email exists
+----------------------------------------
+
+Title:          Missing security header: X-Frame-Options
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/
+    Expected header: X-Frame-Options
+    Result: Header not present in server response
+Details:        X-Frame-Options missing - site vulnerable to Clickjacking attacks
+Recommendation: Add X-Frame-Options: DENY or SAMEORIGIN to prevent the page being embedded in iframes
+----------------------------------------
+
+Title:          External script missing Subresource Integrity (SRI)
+OWASP:          A08 - Software and Data Integrity Failures
+Status:         VULNERABLE
+Evidence:
+  Script tag: <script src="https://kit.fontawesome.com/10cd9403cd.js">
+    External source: https://kit.fontawesome.com/10cd9403cd.js
+    integrity attribute: NOT PRESENT
+    crossorigin attribute: NOT PRESENT
+    Found on page: https://westisliportho.com/
+Details:        External script 'https://kit.fontawesome.com/10cd9403cd.js' loaded without SRI hash - if the CDN is compromised attacker can serve malicious JavaScript to all visitors
+Recommendation: Add integrity and crossorigin attributes to the script tag - generate SRI hash at https://www.srihash.org
+----------------------------------------
+
+Title:          External script missing Subresource Integrity (SRI)
+OWASP:          A08 - Software and Data Integrity Failures
+Status:         VULNERABLE
+Evidence:
+  Script tag: <script src="https://api.aleso.ai/aleso.js">
+    External source: https://api.aleso.ai/aleso.js
+    integrity attribute: NOT PRESENT
+    crossorigin attribute: NOT PRESENT
+    Found on page: https://westisliportho.com/
+Details:        External script 'https://api.aleso.ai/aleso.js' loaded without SRI hash - if the CDN is compromised attacker can serve malicious JavaScript to all visitors
+Recommendation: Add integrity and crossorigin attributes to the script tag - generate SRI hash at https://www.srihash.org
+----------------------------------------
+
+[LOW]
+
+Title:          Missing security header: Referrer-Policy
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/
+    Expected header: Referrer-Policy
+    Result: Header not present in server response
+Details:        Referrer-Policy missing - full URL may be sent to third parties in the Referer header
+Recommendation: Add Referrer-Policy: strict-origin-when-cross-origin
+----------------------------------------
+
+Title:          Missing security header: Permissions-Policy
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://westisliportho.com/
+    Expected header: Permissions-Policy
+    Result: Header not present in server response
+Details:        Permissions-Policy missing - browser features like camera and microphone not restricted
+Recommendation: Add Permissions-Policy header to restrict access to sensitive browser features
+----------------------------------------
+
+Title:          Server version disclosed in Server header
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  Response header: Server: nginx
+Details:        Server reveals version information via 'Server: nginx' header - helps attackers identify vulnerable software versions
+Recommendation: Remove or obscure the 'Server' header in server configuration
+----------------------------------------
+
+Title:          Security reporting headers not configured
+OWASP:          A09 - Security Logging and Monitoring Failures
+Status:         POTENTIAL
+Evidence:
+  GET https://westisliportho.com/
+    Missing reporting headers: Report-To, NEL, Content-Security-Policy-Report-Only
+    These headers enable browser-level security monitoring
+Details:        Security reporting headers not configured - browser-level violations and network errors will not be reported to monitoring systems
+Recommendation: Implement Report-To and NEL headers to collect browser security violation reports - set up a reporting endpoint
+----------------------------------------
+
+[INFO]
+
+Title:          No cryptographic failures detected
+OWASP:          A02 — Cryptographic Failures
+Status:         SAFE
+Evidence:
+  HTTPS enabled, certificate valid, cookies properly configured
+Details:        Basic cryptographic checks passed
+Recommendation: Continue monitoring SSL certificate expiry and cookie configurations
+----------------------------------------
+
+Title:          No authentication failures detected
+OWASP:          A07 - Identification and Authentication Failures
+Status:         SAFE
+Evidence:
+  Default credentials rejected, session tokens appear strong
+Details:        Basic authentication checks passed
+Recommendation: Implement MFA, enforce strong password policy and monitor for suspicious login patterns
+----------------------------------------
+
+Title:          No SSRF vulnerabilities detected
+OWASP:          A10 - Server Side Request Forgery (SSRF)
+Status:         SAFE
+Evidence:
+  SSRF payloads injected into URL parameters and form fields returned no internal content
+Details:        Basic SSRF checks passed - manual testing recommended for complete coverage
+Recommendation: Implement URL allowlisting - block requests to private IP ranges - monitor outbound server connections
+----------------------------------------
+

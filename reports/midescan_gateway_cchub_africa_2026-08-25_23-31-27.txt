@@ -1,0 +1,1224 @@
+=================================================================
+  MIDESCAN v1.0 - SCAN REPORT
+  Created by Cybermide
+=================================================================
+
+Target:    https://gateway.cchub.africa/
+Platform:  Unknown
+Date:      2026-08-25 23:31:27
+Duration:  250.28 seconds
+Total findings: 117
+
+SUMMARY
+CRITICAL: 17  HIGH: 89  MEDIUM: 3  LOW: 4  INFO: 4
+
+=================================================================
+DETAILED FINDINGS
+=================================================================
+
+[CRITICAL]
+
+Title:          Sensitive file exposed: /config.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/config.php
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/config.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/config.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /config.yml
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/config.yml
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/config.yml' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/config.yml' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /config.json
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/config.json
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/config.json' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/config.json' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /config.xml
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/config.xml
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/config.xml' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/config.xml' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /configuration.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/configuration.php
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/configuration.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/configuration.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /wp-config.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/wp-config.php
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/wp-config.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/wp-config.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /wp-config.php.bak
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/wp-config.php.bak
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/wp-config.php.bak' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/wp-config.php.bak' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /database.yml
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/database.yml
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/database.yml' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/database.yml' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /database.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/database.php
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/database.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/database.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /settings.py
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/settings.py
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/settings.py' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/settings.py' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /settings.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/settings.php
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/settings.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/settings.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /local_settings.py
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/local_settings.py
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/local_settings.py' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/local_settings.py' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /web.config
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/web.config
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/web.config' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/web.config' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /appsettings.json
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/appsettings.json
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/appsettings.json' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/appsettings.json' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /backup.sql
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/backup.sql
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/backup.sql' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/backup.sql' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /backup.zip
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/backup.zip
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/backup.zip' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/backup.zip' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /backup.tar.gz
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/backup.tar.gz
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/backup.tar.gz' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/backup.tar.gz' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+[HIGH]
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/admin returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/admin' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/administrator returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/administrator' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/admin/login returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/admin/login' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/admin/dashboard returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/admin/dashboard' containing keyword 'dashboard' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/admin/panel returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/admin/panel' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/admin/index.php returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/admin/index.php' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/admin/index.html returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/admin/index.html' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/dashboard returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/dashboard' containing keyword 'dashboard' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/control returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/control' containing keyword 'control' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/controlpanel returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/controlpanel' containing keyword 'panel' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/control-panel returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/control-panel' containing keyword 'panel' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/cpanel returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/cpanel' containing keyword 'panel' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/panel returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/panel' containing keyword 'panel' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/manage returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/manage' containing keyword 'manage' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/management returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/management' containing keyword 'manage' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/manager returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/manager' containing keyword 'manage' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/webadmin returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/webadmin' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/siteadmin returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/siteadmin' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/wp-admin returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/wp-admin' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/wp-admin/admin-ajax.php returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/wp-admin/admin-ajax.php' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/wp-config.php returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/wp-config.php' containing keyword 'config' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/wordpress/wp-admin returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/wordpress/wp-admin' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/joomla/administrator returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/joomla/administrator' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/administrator/index.php returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/administrator/index.php' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/drupal/admin returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/drupal/admin' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/user/login returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/user/login' containing keyword 'user' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/user/admin returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/user/admin' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/users returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/users' containing keyword 'user' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/users/admin returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/users/admin' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/account returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/account' containing keyword 'account' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/accounts returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/accounts' containing keyword 'account' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/phpmyadmin returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/phpmyadmin' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/mysqladmin returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/mysqladmin' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/database returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/database' containing keyword 'database' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/dbadmin returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/dbadmin' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/myadmin returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/myadmin' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/config returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/config' containing keyword 'config' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/config.php returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/config.php' containing keyword 'config' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/config.yml returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/config.yml' containing keyword 'config' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/config.json returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/config.json' containing keyword 'config' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/configuration.php returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/configuration.php' containing keyword 'config' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/settings returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/settings' containing keyword 'setting' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/settings.php returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/settings.php' containing keyword 'setting' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/backup returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/backup' containing keyword 'backup' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/backups returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/backups' containing keyword 'backup' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/backup.zip returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/backup.zip' containing keyword 'backup' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/backup.sql returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/backup.sql' containing keyword 'backup' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/db_backup.sql returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/db_backup.sql' containing keyword 'backup' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/web.config returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/web.config' containing keyword 'config' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/api/admin returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/api/admin' containing keyword 'admin' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/api/users returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/api/users' containing keyword 'user' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/api/config returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/api/config' containing keyword 'config' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/secret returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/secret' containing keyword 'secret' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/secrets returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/secrets' containing keyword 'secret' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Sensitive page accessible without authentication
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/private returned HTTP 200 OK without login
+Details:        Page 'https://gateway.cchub.africa/private' containing keyword 'private' is publicly accessible
+Recommendation: Implement authentication and authorisation checks on all sensitive pages
+----------------------------------------
+
+Title:          Potential IDOR — Insecure Direct Object Reference
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/user/1 returned HTTP 200 with 1428 bytes of data
+Details:        Resource at '/user/1' is accessible without authentication — changing ID may expose other users data
+Recommendation: Implement object-level authorisation checks — verify the requesting user owns the resource
+----------------------------------------
+
+Title:          Potential IDOR — Insecure Direct Object Reference
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/user/2 returned HTTP 200 with 1428 bytes of data
+Details:        Resource at '/user/2' is accessible without authentication — changing ID may expose other users data
+Recommendation: Implement object-level authorisation checks — verify the requesting user owns the resource
+----------------------------------------
+
+Title:          Potential IDOR — Insecure Direct Object Reference
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/account/1 returned HTTP 200 with 1428 bytes of data
+Details:        Resource at '/account/1' is accessible without authentication — changing ID may expose other users data
+Recommendation: Implement object-level authorisation checks — verify the requesting user owns the resource
+----------------------------------------
+
+Title:          Potential IDOR — Insecure Direct Object Reference
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/account/2 returned HTTP 200 with 1428 bytes of data
+Details:        Resource at '/account/2' is accessible without authentication — changing ID may expose other users data
+Recommendation: Implement object-level authorisation checks — verify the requesting user owns the resource
+----------------------------------------
+
+Title:          Potential IDOR — Insecure Direct Object Reference
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/profile/1 returned HTTP 200 with 1428 bytes of data
+Details:        Resource at '/profile/1' is accessible without authentication — changing ID may expose other users data
+Recommendation: Implement object-level authorisation checks — verify the requesting user owns the resource
+----------------------------------------
+
+Title:          Potential IDOR — Insecure Direct Object Reference
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/profile/2 returned HTTP 200 with 1428 bytes of data
+Details:        Resource at '/profile/2' is accessible without authentication — changing ID may expose other users data
+Recommendation: Implement object-level authorisation checks — verify the requesting user owns the resource
+----------------------------------------
+
+Title:          Potential IDOR — Insecure Direct Object Reference
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/api/user/1 returned HTTP 200 with 1428 bytes of data
+Details:        Resource at '/api/user/1' is accessible without authentication — changing ID may expose other users data
+Recommendation: Implement object-level authorisation checks — verify the requesting user owns the resource
+----------------------------------------
+
+Title:          Potential IDOR — Insecure Direct Object Reference
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/api/user/2 returned HTTP 200 with 1428 bytes of data
+Details:        Resource at '/api/user/2' is accessible without authentication — changing ID may expose other users data
+Recommendation: Implement object-level authorisation checks — verify the requesting user owns the resource
+----------------------------------------
+
+Title:          Potential IDOR — Insecure Direct Object Reference
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/order/1 returned HTTP 200 with 1428 bytes of data
+Details:        Resource at '/order/1' is accessible without authentication — changing ID may expose other users data
+Recommendation: Implement object-level authorisation checks — verify the requesting user owns the resource
+----------------------------------------
+
+Title:          Potential IDOR — Insecure Direct Object Reference
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/order/2 returned HTTP 200 with 1428 bytes of data
+Details:        Resource at '/order/2' is accessible without authentication — changing ID may expose other users data
+Recommendation: Implement object-level authorisation checks — verify the requesting user owns the resource
+----------------------------------------
+
+Title:          Potential IDOR — Insecure Direct Object Reference
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/document/1 returned HTTP 200 with 1428 bytes of data
+Details:        Resource at '/document/1' is accessible without authentication — changing ID may expose other users data
+Recommendation: Implement object-level authorisation checks — verify the requesting user owns the resource
+----------------------------------------
+
+Title:          Potential IDOR — Insecure Direct Object Reference
+OWASP:          A01 — Broken Access Control
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/document/2 returned HTTP 200 with 1428 bytes of data
+Details:        Resource at '/document/2' is accessible without authentication — changing ID may expose other users data
+Recommendation: Implement object-level authorisation checks — verify the requesting user owns the resource
+----------------------------------------
+
+Title:          No rate limiting detected on login page
+OWASP:          A04 — Insecure Design
+Status:         VULNERABLE
+Evidence:
+  Login URL: https://gateway.cchub.africa/login
+    Method: POST with 10 rapid requests
+    Result: No blocking, rate limiting or lockout detected after 10 failed attempts
+    HTTP status remained: 405
+Details:        Login page does not implement rate limiting — attacker can perform brute force or credential stuffing attacks without restriction
+Recommendation: Implement rate limiting (max 5 attempts), account lockout, CAPTCHA and exponential backoff on login endpoints
+----------------------------------------
+
+Title:          Predictable resource IDs detected — potential IDOR
+OWASP:          A04 — Insecure Design
+Status:         VULNERABLE
+Evidence:
+  Multiple sequential IDs returned data:
+    GET https://gateway.cchub.africa/user/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/user/2 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/user/3 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/account/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/account/2 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/profile/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/profile/2 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/order/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/order/2 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/invoice/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/invoice/2 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/document/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/document/2 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/api/v1/user/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/api/v1/user/2 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/api/users/1 → 200 OK (1428 bytes)
+    GET https://gateway.cchub.africa/api/users/2 → 200 OK (1428 bytes)
+Details:        Sequential numeric IDs in URLs suggest IDOR vulnerability — attacker can enumerate IDs to access other users data
+Recommendation: Use UUIDs instead of sequential IDs — implement object-level authorisation checks on every request
+----------------------------------------
+
+Title:          Missing security header: Content-Security-Policy
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/
+    Expected header: Content-Security-Policy
+    Result: Header not present in server response
+Details:        CSP header missing - attacker can inject and execute malicious scripts (XSS)
+Recommendation: Add Content-Security-Policy header to restrict sources of scripts, styles and other resources
+----------------------------------------
+
+Title:          Missing security header: Strict-Transport-Security
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/
+    Expected header: Strict-Transport-Security
+    Result: Header not present in server response
+Details:        HSTS missing - browser may allow HTTP connections leaving users vulnerable to downgrade attacks
+Recommendation: Add Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+----------------------------------------
+
+Title:          Sensitive file exposed: /db.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/db.php
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/db.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/db.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /dump.sql
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/dump.sql
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/dump.sql' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/dump.sql' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /phpinfo.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/phpinfo.php
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/phpinfo.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/phpinfo.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /info.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/info.php
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/info.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/info.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /test.php
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/test.php
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/test.php' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/test.php' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /composer.json
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/composer.json
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/composer.json' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/composer.json' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /composer.lock
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/composer.lock
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/composer.lock' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/composer.lock' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /package.json
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/package.json
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/package.json' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/package.json' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /Dockerfile
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/Dockerfile
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/Dockerfile' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/Dockerfile' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /docker-compose.yml
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/docker-compose.yml
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/docker-compose.yml' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/docker-compose.yml' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /robots.txt
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/robots.txt
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/robots.txt' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/robots.txt' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /sitemap.xml
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/sitemap.xml
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/sitemap.xml' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/sitemap.xml' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /crossdomain.xml
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/crossdomain.xml
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/crossdomain.xml' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/crossdomain.xml' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /clientaccesspolicy.xml
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/clientaccesspolicy.xml
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/clientaccesspolicy.xml' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/clientaccesspolicy.xml' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /server-status
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/server-status
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/server-status' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/server-status' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /server-info
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/server-info
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/server-info' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/server-info' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /elmah.axd
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/elmah.axd
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/elmah.axd' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/elmah.axd' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+Title:          Sensitive file exposed: /trace.axd
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/trace.axd
+    HTTP Status: 200 OK
+    Content size: 1428 bytes
+    Content preview: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type="im...
+Details:        Sensitive file '/trace.axd' is publicly accessible - may contain credentials, API keys, database passwords or server configuration
+Recommendation: Immediately restrict access to '/trace.axd' - move sensitive files outside web root or block via server configuration
+----------------------------------------
+
+[MEDIUM]
+
+Title:          Missing security header: X-Frame-Options
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/
+    Expected header: X-Frame-Options
+    Result: Header not present in server response
+Details:        X-Frame-Options missing - site vulnerable to Clickjacking attacks
+Recommendation: Add X-Frame-Options: DENY or SAMEORIGIN to prevent the page being embedded in iframes
+----------------------------------------
+
+Title:          Missing security header: X-Content-Type-Options
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/
+    Expected header: X-Content-Type-Options
+    Result: Header not present in server response
+Details:        X-Content-Type-Options missing - browser may interpret files as different MIME types
+Recommendation: Add X-Content-Type-Options: nosniff to prevent MIME type sniffing
+----------------------------------------
+
+Title:          External script missing Subresource Integrity (SRI)
+OWASP:          A08 - Software and Data Integrity Failures
+Status:         VULNERABLE
+Evidence:
+  Script tag: <script src="https://www.googletagmanager.com/gtag/js?id=AW-17884003537">
+    External source: https://www.googletagmanager.com/gtag/js?id=AW-17884003537
+    integrity attribute: NOT PRESENT
+    crossorigin attribute: NOT PRESENT
+    Found on page: https://gateway.cchub.africa/
+Details:        External script 'https://www.googletagmanager.com/gtag/js?id=AW-17884003537' loaded without SRI hash - if the CDN is compromised attacker can serve malicious JavaScript to all visitors
+Recommendation: Add integrity and crossorigin attributes to the script tag - generate SRI hash at https://www.srihash.org
+----------------------------------------
+
+[LOW]
+
+Title:          Missing security header: Referrer-Policy
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/
+    Expected header: Referrer-Policy
+    Result: Header not present in server response
+Details:        Referrer-Policy missing - full URL may be sent to third parties in the Referer header
+Recommendation: Add Referrer-Policy: strict-origin-when-cross-origin
+----------------------------------------
+
+Title:          Missing security header: Permissions-Policy
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  GET https://gateway.cchub.africa/
+    Expected header: Permissions-Policy
+    Result: Header not present in server response
+Details:        Permissions-Policy missing - browser features like camera and microphone not restricted
+Recommendation: Add Permissions-Policy header to restrict access to sensitive browser features
+----------------------------------------
+
+Title:          Server version disclosed in Server header
+OWASP:          A05 - Security Misconfiguration
+Status:         VULNERABLE
+Evidence:
+  Response header: Server: nginx/1.31.4
+Details:        Server reveals version information via 'Server: nginx/1.31.4' header - helps attackers identify vulnerable software versions
+Recommendation: Remove or obscure the 'Server' header in server configuration
+----------------------------------------
+
+Title:          Security reporting headers not configured
+OWASP:          A09 - Security Logging and Monitoring Failures
+Status:         POTENTIAL
+Evidence:
+  GET https://gateway.cchub.africa/
+    Missing reporting headers: Report-To, NEL, Content-Security-Policy-Report-Only
+    These headers enable browser-level security monitoring
+Details:        Security reporting headers not configured - browser-level violations and network errors will not be reported to monitoring systems
+Recommendation: Implement Report-To and NEL headers to collect browser security violation reports - set up a reporting endpoint
+----------------------------------------
+
+[INFO]
+
+Title:          No cryptographic failures detected
+OWASP:          A02 — Cryptographic Failures
+Status:         SAFE
+Evidence:
+  HTTPS enabled, certificate valid, cookies properly configured
+Details:        Basic cryptographic checks passed
+Recommendation: Continue monitoring SSL certificate expiry and cookie configurations
+----------------------------------------
+
+Title:          No injection vulnerabilities detected
+OWASP:          A03 — Injection
+Status:         SAFE
+Evidence:
+  SQL, XSS and command injection payloads did not trigger vulnerable responses
+Details:        Basic injection checks passed — manual testing recommended for complete coverage
+Recommendation: Implement parameterised queries, output encoding and input validation as defence in depth
+----------------------------------------
+
+Title:          No authentication failures detected
+OWASP:          A07 - Identification and Authentication Failures
+Status:         SAFE
+Evidence:
+  Default credentials rejected, session tokens appear strong
+Details:        Basic authentication checks passed
+Recommendation: Implement MFA, enforce strong password policy and monitor for suspicious login patterns
+----------------------------------------
+
+Title:          No SSRF vulnerabilities detected
+OWASP:          A10 - Server Side Request Forgery (SSRF)
+Status:         SAFE
+Evidence:
+  SSRF payloads injected into URL parameters and form fields returned no internal content
+Details:        Basic SSRF checks passed - manual testing recommended for complete coverage
+Recommendation: Implement URL allowlisting - block requests to private IP ranges - monitor outbound server connections
+----------------------------------------
+
